@@ -1,0 +1,15 @@
+
+ul {
+    float: none;
+    text-align: center;
+  display: flex;
+  padding-left: 50px;
+}
+li {
+  color: black;
+  list-style-type: none;
+  margin: 10px;
+}
+nav ul li{
+    text-align: center;
+}
