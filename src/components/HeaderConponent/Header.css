@@ -1,15 +1,19 @@
 
 ul {
-    float: none;
+  
     text-align: center;
   display: flex;
   padding-left: 50px;
 }
 li {
+  float: left;
   color: black;
   list-style-type: none;
   margin: 10px;
 }
-nav ul li{
+/* nav ul li{
     text-align: center;
+} */
+.navbar{
+  background-color: #5ca4a9;
 }

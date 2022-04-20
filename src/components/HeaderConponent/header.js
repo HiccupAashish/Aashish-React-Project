@@ -5,8 +5,9 @@ import {Link } from "react-router-dom";
 export default function Header() {
   return (
     <div>
-       <nav className="navbar navbar-dark bg-primary">
-  
+      
+       <nav className="navbar navbar-dark ">
+       <Link to="/"><img src="favicon_io/android-chrome-192x192.png" style={{height:"30px",width:"30px"}}/> </Link>
 
            <ul>
              <Link to="/"> <li  >
