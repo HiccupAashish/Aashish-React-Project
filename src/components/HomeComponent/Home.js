@@ -5,6 +5,7 @@ import Paragraph from "./Paragraph";
 export default function Home() {
   return (
     <div>
+ 
       <Text />
       <Image />
       <Paragraph />

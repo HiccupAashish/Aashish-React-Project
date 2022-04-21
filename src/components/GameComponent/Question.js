@@ -60,7 +60,10 @@ export default function Question({
     const scoretoggle = await fetchTask(id);
     console.log(scoretoggle);
 
-    const updScore = { ...scoretoggle, score: score };
+    const updScore = {
+      ...scoretoggle,
+      score: score,
+    };
     console.log(updScore);
     const res = await fetch(`http://localhost:8009/User/${id}`, {
       method: "PUT",
@@ -73,7 +76,12 @@ export default function Question({
     const data = await res.json();
     setName(
       name.map((names) =>
-        names.id === id ? { ...names, score: data.score } : names
+        names.id === id
+          ? {
+              ...names,
+              score: data.score,
+            }
+          : names
       )
     );
   };
@@ -101,42 +109,60 @@ export default function Question({
 
   return (
     <>
-      <h2>Q{currQues + 1}</h2>
-      <div className="jumbotron" style={{ backgroundColor: "#ddbea9" }}>
+      <h2> Q {currQues + 1} </h2>{" "}
+      <div
+        className="jumbotron"
+        style={{
+          backgroundColor: "#ddbea9",
+        }}
+      >
         <div
-          style={{ width: "100%", marginTop: "10px" }}
+          style={{
+            width: "100%",
+            marginTop: "10px",
+          }}
           className="btn-danger"
         >
           {" "}
-          {minutes}:{seconds}
-        </div>
-        <div className="QuestionTab">{question[currQues].question}</div>
+          {minutes}: {seconds}{" "}
+        </div>{" "}
+        <div className="QuestionTab"> {question[currQues].question} </div>{" "}
         <div className="optionstab">
+          {" "}
           {options &&
             options.map((option) => (
-              <label key={option} style={{ display: "flex" }}>
+              <label
+                key={option}
+                style={{
+                  display: "flex",
+                }}
+              >
                 <input
                   type="radio"
                   value={option}
                   name="check"
                   onClick={handleCheck}
-                />
-                {option}
+                />{" "}
+                {option}{" "}
               </label>
-            ))}
-        </div>
+            ))}{" "}
+        </div>{" "}
         <div className="Btn">
-          {error ? "Select an Option Cunt" : null}
-
-          <button onClick={handleNext}>Next</button>
+          {" "}
+          {error ? "Select an Option Cunt" : null}{" "}
+          <button onClick={handleNext}> Next </button>{" "}
           <button
             onClick={handleQuitter}
-            style={{ backgroundColor: "red", display: "flex", align: "center" }}
+            style={{
+              backgroundColor: "red",
+              display: "flex",
+              align: "center",
+            }}
           >
-            Quit
-          </button>
-        </div>
-      </div>
+            Quit{" "}
+          </button>{" "}
+        </div>{" "}
+      </div>{" "}
     </>
   );
 }

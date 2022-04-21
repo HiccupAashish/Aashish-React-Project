@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Aashish shah",
-      "score": "5"
+      "score": 5
     },
     {
       "id": "50966483-4784-4f49-a98d-ad7be5848d68",
@@ -28,11 +28,6 @@
     {
       "id": "07a24a19-e7d6-4a6a-8bba-719333a7b85d",
       "name": "Lava",
-      "score": 3
-    },
-    {
-      "id": "8930ea88-739f-4cb0-8ed7-bd7476e94c7a",
-      "name": "Rahul",
       "score": 3
     }
   ]
