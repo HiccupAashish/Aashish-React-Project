@@ -9,7 +9,6 @@ import Game from "./components/GameComponent/Game";
 import Quiz from "./components/GameComponent/Quiz";
 import Footer from "./components/FooterComponent/Footer";
 import { useState } from "react";
-
 function App() {
   const [question, setQuestion] = useState();
   const [score, setScore] = useState(0);
@@ -22,7 +21,7 @@ function App() {
   }, [quizname]);
 
   async function UserName() {
-    const url = await fetch("http://localhost:8009/User");
+    const url = await fetch("http://localhost:8009/User?_sort=date&_order=DESC");
     const data = await url.json();
     setName(data);
   }

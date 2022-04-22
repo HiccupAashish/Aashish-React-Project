@@ -18,6 +18,8 @@ export default function Game({
 
   const navigate = useNavigate();
   const NameRef = useRef();
+  const now = new Date();
+  const date= now.toLocaleString('en-US')
 
   async function handleName() {
     const username = NameRef.current.value;
@@ -30,6 +32,7 @@ export default function Game({
         id: v4(),
         name: `${username}`,
         score: 0,
+        date:date,
       }),
     });
     const data = await a.json();
