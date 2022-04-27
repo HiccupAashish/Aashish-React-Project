@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-// import Timer from "./components/HomeComponent/Timer";
 import Header from "./components/HeaderConponent/header";
 import Home from "./components/HomeComponent/Home";
 import Result from "./components/ScoreComponent/Result";
@@ -21,12 +20,12 @@ function App() {
   }, [quizname]);
 
   async function UserName() {
-    const url = await fetch("http://localhost:8009/User?_sort=date&_order=DESC");
+    const url = await fetch(
+      "http://localhost:8009/User?_sort=date&_order=DESC"
+    );
     const data = await url.json();
     setName(data);
   }
- 
-
 
   async function fetchQuestion() {
     const res = await fetch(
@@ -42,10 +41,6 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-       
- 
- 
-   
 
         <div className="jumbotron">
           <Routes>
@@ -67,7 +62,14 @@ function App() {
             ></Route>
             <Route
               path="/Result"
-              element={<Result setName={setName} setId={setId} name={name} score={score} />}
+              element={
+                <Result
+                  setName={setName}
+                  setId={setId}
+                  name={name}
+                  score={score}
+                />
+              }
             ></Route>
             <Route
               path="/quiz"

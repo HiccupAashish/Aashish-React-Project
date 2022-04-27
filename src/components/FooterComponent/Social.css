@@ -1,12 +1,12 @@
 #SocialLinks {
-  background-color: red;
+display: flex;
 
   padding: 25px 50px;
-  /* justify-content: space-between; */
+  justify-content: space-between;
 }
 a.bi {
-  margin: 0 1rem;
+  
   transition: transform 250ms;
-  display: inline-block;
+
   padding-right: 10px;
 }
