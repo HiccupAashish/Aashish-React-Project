@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { AppContext } from "../Contexts/AppContext";
 import Question from "./Question";
 
-export default function Quiz({
-  name,
-  quizname,
-  setId,
-  id,
-  setName,
-  setQuestion,
-  fetchQuestion,
-  score,
-  setScore,
-  question,
-}) {
+export default function Quiz() {
+  const{question,quizname,setshow}=useContext(AppContext)
   const [options, setOptions] = useState();
   const [currQues, setCurrQues] = useState(0);
-
+ setshow(false)
   useEffect(() => {
+    
     setOptions(
       question &&
         Shuffle([
@@ -36,19 +28,11 @@ export default function Quiz({
       {question ? (
         <>
           <Question
-            setId={setId}
-            id={id}
-            name={name}
-            setName={setName}
+        options={options}
+            correct={question[currQues]?.correct_answer}
             currQues={currQues}
             setCurrQues={setCurrQues}
-            question={question}
-            quizname={quizname}
-            options={options}
-            correct={question[currQues]?.correct_answer}
-            score={score}
-            setScore={setScore}
-            setQuestion={setQuestion}
+          
           />
         </>
       ) : (

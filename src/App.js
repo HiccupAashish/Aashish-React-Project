@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/HeaderConponent/header";
@@ -7,87 +7,34 @@ import Result from "./components/ScoreComponent/Result";
 import Game from "./components/GameComponent/Game";
 import Quiz from "./components/GameComponent/Quiz";
 import Footer from "./components/FooterComponent/Footer";
-import { useState } from "react";
-function App() {
-  const [question, setQuestion] = useState();
-  const [score, setScore] = useState(0);
-  const [name, setName] = useState("");
-  const [quizname, setQuizname] = useState();
-  const [id, setId] = useState();
+import { AppContext } from "./components/Contexts/AppContext";
+import db from "./components/FireBase/Firebase";
+import { collection,getDocs} from "firebase/firestore";
 
+function App() {
+  const { quizname, show, setJsonData } = useContext(AppContext);
+
+  const resultCollectionRef=collection(db,"Participant")
+  async function GrabDatabase() {
+    const result=await getDocs(resultCollectionRef)
+    setJsonData(result.docs.map((doc)=>({...doc.data(),id:doc.id})))
+  }
   useEffect(() => {
-    UserName();
+    GrabDatabase();
+    console.log("effect Triggered")
   }, [quizname]);
 
-  async function UserName() {
-    const url = await fetch(
-      "http://localhost:8009/User?_sort=date&_order=DESC"
-    );
-    const data = await url.json();
-    setName(data);
-  }
-
-  async function fetchQuestion() {
-    const res = await fetch(
-      "https://raw.githubusercontent.com/HiccupAashish/Quiz-Database/main/User.json"
-    );
-    const data = await res.json();
-    console.log(data);
-
-    setQuestion(data.results);
-  }
 
   return (
     <div className="App">
       <Router>
-        <Header />
-
+        {show && <Header />}
         <div className="jumbotron">
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route
-              path="/Game"
-              element={
-                <Game
-                  setQuizname={setQuizname}
-                  setId={setId}
-                  id={id}
-                  question={question}
-                  name={name}
-                  setScore={setScore}
-                  setName={setName}
-                  fetchQuestion={fetchQuestion}
-                />
-              }
-            ></Route>
-            <Route
-              path="/Result"
-              element={
-                <Result
-                  setName={setName}
-                  setId={setId}
-                  name={name}
-                  score={score}
-                />
-              }
-            ></Route>
-            <Route
-              path="/quiz"
-              element={
-                <Quiz
-                  setId={setId}
-                  id={id}
-                  quizname={quizname}
-                  name={name}
-                  setName={setName}
-                  setQuestion={setQuestion}
-                  fetchQuestion={fetchQuestion}
-                  score={score}
-                  setScore={setScore}
-                  question={question}
-                />
-              }
-            ></Route>
+            <Route path="/" element={<Home />} />
+            <Route path="/Game" element={<Game />} />
+            <Route path="/Result" element={<Result />} />
+            <Route path="/quiz" element={<Quiz />} />
           </Routes>
         </div>
         <Footer />

@@ -1,21 +1,35 @@
-import React from 'react'
+import { deleteDoc, doc } from 'firebase/firestore';
+import React, { useContext } from 'react'
+import { AppContext } from '../Contexts/AppContext';
 import ResultList from './ResultList'
+import db from '../FireBase/Firebase';
 
+export default function Result() {
+  const {jsonData,setshow,setJsonData}=useContext(AppContext)
+  setshow(true)
+  console.log(jsonData)
+  const renderData=()=>{
+   return jsonData.map(data=>
+       <ResultList 
+         color={data.score>3?"#b7b7a4":"#e76f51"} handleDelete={handleDelete} key={data.id} data={data}/>)
+ 
+  }
 
-export default function Result({name,setName,score}) {
 async function handleDelete(id){
-  await fetch(`http://localhost:8009/User/${id}`, {
-    method: "DELETE",
-  });
-setName(name.filter(names=> 
-  names.id!==id))
+  const deleteUser=doc(db,"Participant",id)
+await deleteDoc(deleteUser)
+setJsonData(jsonData.filter(newdata=>
+  newdata.id!==id))
+
 }
   return (
     <div>
-      {name.map(names=>
-      <ResultList handleDelete={handleDelete} color={names.score>3?"#b7b7a4":"#e76f51"} key={names.id} names={names}/>
-     
-      )}
+      {
+        jsonData ? 
+       renderData()
+      
+        :<h1>No data to load</h1>
+      }
     </div>
   )
 }

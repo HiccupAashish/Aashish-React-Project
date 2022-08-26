@@ -1,58 +1,28 @@
 {
   "User": [
     {
-      "id": 1,
-      "name": "Aashish shah",
-      "score": 5,
-      "date": "4/21/2022, 4:33:46 PM"
+      "id": "b2958446-a786-4133-8c88-9a5f3f152732",
+      "name": "wecfwe",
+      "score": 0,
+      "date": "5/5/2022, 11:02:55 PM"
     },
     {
-      "id": "cb6df36e-ec39-474e-96e6-c00f51c3ad36",
-      "name": "Rahul",
+      "id": "f8c706de-54d6-4763-9b6a-fb2e68369813",
+      "name": "sfcwec",
       "score": 3,
-      "date": "4/21/2022, 4:39:46 PM"
+      "date": "5/5/2022, 11:04:37 PM"
     },
     {
-      "id": "55ac2ab7-c4a7-4661-9899-bad8c4bb71f1",
-      "name": "lava",
-      "score": 1,
-      "date": "4/21/2022, 4:33:46 PM"
-    },
-    {
-      "id": "11aedf83-bc52-439b-879c-929e75a4b2a3",
-      "name": "Sanjeev",
+      "id": "9a2bc118-a8ad-4749-974a-b83d6bc654e8",
+      "name": "fbg",
       "score": 2,
-      "date": "4/21/2022, 4:42:19 PM"
+      "date": "5/5/2022, 11:16:47 PM"
     },
     {
-      "id": "918263f3-437a-40a4-aaa7-d24cf909d0e0",
-      "name": "Prince",
-      "score": 1,
-      "date": "4/21/2022, 4:43:12 PM"
-    },
-    {
-      "id": "f1a24bd4-909f-4919-a3c5-a29653869e1e",
-      "name": "idiot",
-      "score": 5,
-      "date": "4/21/2022, 4:48:55 PM"
-    },
-    {
-      "id": "8588e9ce-6143-4d41-bfe7-ab99bb50d028",
-      "name": "Mayalu",
-      "score": 4,
-      "date": "4/21/2022, 4:49:48 PM"
-    },
-    {
-      "id": "99e4bfba-fd96-4389-bb80-beadb52b13e5",
-      "name": "Hero",
-      "score": 1,
-      "date": "4/21/2022, 5:20:39 PM"
-    },
-    {
-      "id": "e43a9164-d51a-4155-828a-a468c6b4fbed",
-      "name": "jqwc jd",
-      "score": 1,
-      "date": "4/26/2022, 5:11:52 PM"
+      "id": "912502d4-f19e-4d2c-9343-3270b4e75f40",
+      "name": "fvfs",
+      "score": 0,
+      "date": "5/5/2022, 11:27:04 PM"
     }
   ]
 }
