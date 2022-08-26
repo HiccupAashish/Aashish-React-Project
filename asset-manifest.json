@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f6a3d83.css",
-    "main.js": "/static/js/main.3ccf63c9.js",
-    "static/media/bootstrap-icons.woff?": "/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
-    "static/media/bootstrap-icons.woff2?": "/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
-    "index.html": "/index.html",
-    "main.7f6a3d83.css.map": "/static/css/main.7f6a3d83.css.map",
-    "main.3ccf63c9.js.map": "/static/js/main.3ccf63c9.js.map"
+    "main.css": "/Aashish-React-Project/static/css/main.e47401bf.css",
+    "main.js": "/Aashish-React-Project/static/js/main.f8c06e7e.js",
+    "static/media/bootstrap-icons.woff?": "/Aashish-React-Project/static/media/bootstrap-icons.c1d7432ee75fa194e499.woff",
+    "static/media/bootstrap-icons.woff2?": "/Aashish-React-Project/static/media/bootstrap-icons.a13b815539b49de48d23.woff2",
+    "index.html": "/Aashish-React-Project/index.html",
+    "main.e47401bf.css.map": "/Aashish-React-Project/static/css/main.e47401bf.css.map",
+    "main.f8c06e7e.js.map": "/Aashish-React-Project/static/js/main.f8c06e7e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f6a3d83.css",
-    "static/js/main.3ccf63c9.js"
+    "static/css/main.e47401bf.css",
+    "static/js/main.f8c06e7e.js"
   ]
 }
